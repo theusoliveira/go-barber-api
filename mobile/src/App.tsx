@@ -1,20 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import 'react-native-gesture-handler';
 
-import GlobalStyle from './styles/global';
+import React from 'react';
+import { View, StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
 import Routes from './routes';
 
-import AppProvider from './hooks';
-
 const App: React.FC = () => (
-  <Router>
-    <AppProvider>
+  <NavigationContainer>
+    <StatusBar barStyle="light-content" backgroundColor="#312e38" />
+    <View style={{ flex: 1, backgroundColor: '#312e38' }}>
       <Routes />
-    </AppProvider>
-
-    <GlobalStyle />
-  </Router>
+    </View>
+  </NavigationContainer>
 );
 
 export default App;
