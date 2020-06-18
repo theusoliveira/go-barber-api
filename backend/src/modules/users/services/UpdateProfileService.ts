@@ -34,7 +34,7 @@ class UpdateProfileService {
     const user = await this.usersRepository.findById(user_id);
 
     if (!user) {
-      throw new AppError('USer not found.');
+      throw new AppError('User not found.');
     }
 
     const userWithUpdatedEmail = await this.usersRepository.findByEmail(email);
